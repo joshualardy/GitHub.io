@@ -223,8 +223,8 @@ h2 {
 /* Image de profil dans "À propos" */
 #apropos img {
   width: 100%;
-  max-width: 320px;
-  height: 320px;
+  max-width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
