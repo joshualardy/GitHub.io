@@ -220,6 +220,18 @@ h2 {
   letter-spacing: 0.05em;
 }
 
+/* Image de profil dans "À propos" */
+#apropos img {
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+}
+
 /* =====================
    PROJETS
 ===================== */
