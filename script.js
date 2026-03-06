@@ -50,3 +50,31 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach((section) => observer.observe(section));
+
+// =====================
+// PROJETS GITHUB
+// =====================
+
+fetch('https://api.github.com/users/joshualardy/repos?sort=updated&per_page=6')
+  .then(res => res.json())
+  .then(repos => {
+    const grid = document.querySelector('#projets .grid');
+    if (!grid) return;
+
+    repos.forEach(repo => {
+      grid.innerHTML += `
+        <div class="card">
+          <div class="card-body">
+            <p class="card-type">GitHub</p>
+            <h3>${repo.name}</h3>
+            <p>${repo.description || 'Aucune description.'}</p>
+            <a href="${repo.html_url}" class="card-link" target="_blank" rel="noopener noreferrer">
+              Voir sur GitHub →
+            </a>
+          </div>
+        </div>`;
+    });
+  })
+  .catch(err => {
+    console.error('Erreur lors du chargement des dépôts GitHub :', err);
+  });
