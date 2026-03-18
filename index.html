@@ -1,125 +1,292 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio – Ton Nom</title>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio – Joshua Arzu Lardy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">Joshua.</div>
+        <nav class="main-nav">
+          <a href="#hero">Home</a>
+          <a href="#about">About Me</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="assets/images/CV_Joshua_Arzu_Lardy.pdf" class="btn btn-primary btn-small">Voir mon CV</a>
+      </div>
+    </header>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
+    <main>
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <p class="eyebrow">Hi I am</p>
+            <p class="hero-name">Joshua Arzu Lardy</p>
+            <h1 class="hero-title">Étudiant</h1>
+            <p class="hero-lead">
+              Étudiant en écriture multimédia · design · création de contenu et
+              vidéo.
+            </p>
+            <a href="#contact" class="btn btn-primary hero-cta">Hire Me</a>
+          </div>
+          <div class="hero-photo">
+            <div class="hero-photo-circle">
+              <img
+                src="assets/images/photoProfil.HEIC"
+                alt="Portrait de Joshua"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">JA<!-- ✏️ TES INITIALES --></div>
-    <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+      <section id="about">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-kicker">About Me</p>
+            <h2>Qui je suis</h2>
+          </header>
+          <div class="about-grid">
+            <div class="about-photo">
+              <div class="about-photo-circle">
+                <img
+                  src="assets/images/photoProfil.HEIC"
+                  alt="Joshua en portrait"
+                />
+              </div>
+            </div>
+            <div class="about-content">
+              <p>
+                Passionné par la création visuelle et la communication, je suis
+                actuellement en 2e année d'écriture multimédia à l'ISFSC. Mon
+                parcours entre psychologie, informatique et multimédia m'a
+                donné une vision transversale du design.
+              </p>
 
-  <!-- HERO -->
-  <section id="accueil">
-    <!-- <span class="hero-tag">Disponible pour un stage</span> -->
-    <h1><span>Joshua</span><br/>ARZU LARDY</h1><!-- ✏️ -->
-    <p class="hero-sub">Étudiant en à ISFSC en écriture multimédia · Design · Création de contenu · Communication visuelle</p><!-- ✏️ -->
-    <div class="hero-cta">
-      <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-      <a href="#contact" class="btn btn-outline">Me contacter</a>
-    </div>
-  </section>
+              <div class="skills-bars">
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span>UX</span>
+                    <span>70%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill level-70"></div>
+                  </div>
+                </div>
 
-  <!-- À PROPOS -->
-  <section id="apropos">
-    <p class="section-label">À propos</p>
-    <h2>Qui suis-je ?</h2>
-    <div class="grid">
-      <div>
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span>Premiere Pro</span>
+                    <span>80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill level-80"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span>Illustrator</span>
+                    <span>65%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill level-65"></div>
+                  </div>
+                </div>
+
+                <div class="skill-item">
+                  <div class="skill-label-row">
+                    <span>Video</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-bar-fill level-90"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-light">
+        <div class="container">
+          <header class="section-header section-header-center">
+            <p class="section-kicker">Services</p>
+            <h2>Mes competences</h2>
+            <p class="section-intro">
+              Je suis passionné par la création visuelle et la communication.
+              Je suis actuellement en 2e année d'écriture multimédia à l'ISFSC.
+              Mon parcours entre psychologie, informatique et multimédia m'a
+              donné une vision transversale du design.
+            </p>
+          </header>
+
+          <div class="cards-grid">
+            <article class="card">
+              <h3>Developpement</h3>
+              <p>
+                Développement de sites web et applications mobiles.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Premiere Pro</h3>
+              <p>
+                Montage vidéo fluide et dynamique pour raconter des histoires
+                percutantes.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Illustrator</h3>
+              <p>
+                Création d'illustrations et d'éléments graphiques adaptés à vos
+                projets.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Video</h3>
+              <p>
+                Tournage et post-production de contenus vidéo pour le web et les
+                réseaux sociaux.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section id="projects">
+        <div class="container">
+          <header class="section-header section-header-center">
+            <p class="section-kicker">My Projects</p>
+            <h2>Travaux récents</h2>
+            <p class="section-intro">
+              Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam
+              mauris est risus lectus. Phasellus consequat urna tellus.
+            </p>
+          </header>
+
+          <div class="project-filters">
+            <button class="filter-chip is-active">All</button>
+            <button class="filter-chip">Developpement</button>
+            <button class="filter-chip">Premiere Pro</button>
+            <button class="filter-chip">Illustrator</button>
+            <button class="filter-chip">Vidéo</button>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img
+                  src="assets/images/Site_enlace/Capture d’écran 2026-03-18 à 14.16.53.png"
+                  alt="Site école"
+                />
+                <img
+                  src="assets/images/Site_enlace/Capture d’écran 2026-03-18 à 14.17.08.png"
+                    alt="Site école"
+                />
+                <img
+                  src="assets/images/Site_enlace/Capture d’écran 2026-03-18 à 14.17.15.png"
+                  alt="Site école"
+                />
+                <img
+                  src="assets/images/Site_enlace/Capture d’écran 2026-03-18 à 14.17.24.png"
+                  alt="Site école"
+                />
+                <img
+                  src="assets/images/Site_enlace/Capture d’écran 2026-03-18 à 14.17.31.png"
+                  alt="Site école"
+                />
+              </div>
+              <p class="project-type">Web Design</p>
+              <h3 class="project-title">Site école</h3>
+            </article>
+
+            <article class="project-card">
+              <div class="project-thumb">
+                <video controls width="100%" style="border-radius: 10px; display: block;">
+                  <source src="assets/video/Bapteme.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <p class="project-type">Vidéo</p>
+                <h3 class="project-title">Bapteme</h3>
+            </article>
+
+            <article class="project-card">
+              <div class="project-thumb">
+                <video controls width="100%" style="border-radius: 10px; display: block;">
+                  <source src="assets/video/Reel 1.mp4" type="video/mp4"/>
+                </video>
+              </div>
+              <p class="project-type">Vidéo</p>
+              <h3 class="project-title">Résumé camp de jeunesse</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+     
+
+      <section id="contact" class="section-light">
+        <div class="container contact-cta">
+          <header class="section-header section-header-center">
+            <p class="section-kicker">Contact</p>
+            <h2>Contactez-moi !</h2>
+          </header>
+
+          <ul class="contact-details">
+            <li class="contact-item">
+              <a href="mailto:joshua.lardy@gmail.com">joshua.lardy@gmail.com</a>
+            </li>
+            <li class="contact-item">
+              <a href="tel:+32487517433">+32 4 87 51 74 33</a>
+            </li>
+            <li class="contact-item">
+              <span>Bruxelles, Belgique</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-top">
+        <nav class="footer-nav">
+          <a href="#hero">Home</a>
+          <a href="#about">About Me</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/joshua-arzu-lardy-055207332/" aria-label="Visiter mon LinkedIn" class="social-icon">
+            <img src="https://www.figma.com/api/mcp/asset/c00f731a-56b1-4ad2-86ff-f0bddeb6d1e5" alt="" />
+          </a>
+          <a href="https://www.instagram.com/arzu.joshua/" aria-label="Visiter mon Instagram" class="social-icon">
+            <img src="https://www.figma.com/api/mcp/asset/1ae7b4e6-d203-4de3-a838-0d486d347417" alt="" />
+
+          </a>
+          <a href="https://github.com/joshualardy" aria-label="Visiter mon GitHub" class="social-icon">
+            <img src="assets/images/GitHub_Invertocat_Black_Clearspace.svg" alt="GitHub" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <p>
-          <!-- DESCRIPTION -->
-          Passionné par la création visuelle et la communication, je suis actuellement en 2e année d'écriture multimédia à l'ISFSC. Mon parcours entre psychologie, informatique et multimédia m'a donné une vision transversale du design.
+          © 2023 <span class="accent">Joshua Arzu Lardy</span>. All rights reserved.
         </p>
-        <div class="skills-list">
-
-          <span class="skill-tag">Adobe Illustrator</span>
-          <span class="skill-tag">Premiere Pro</span>
-          <span class="skill-tag">Canva</span>
-          <span class="skill-tag">HTML / CSS</span>
-          <span class="skill-tag">Français</span>
-          <span class="skill-tag">Anglais</span>
-          <span class="skill-tag">Espagnol</span>
-          <span class="skill-tag">Néerlandais (basique)</span>
-        </div>
       </div>
-      <div>
-      <img src="assets/images/photoProfil.HEIC" alt="Photo de Joshua ARZU LARDY" />
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJETS -->
-  <section id="projets">
-    <p class="section-label">Projets</p>
-    <h2>Mes réalisations</h2>
-    <div class="grid">
-
-      <!-- ✏️ PROJET 1 -->
-      <div class="card">
-        <div class="card-img">IMAGE<!-- ✏️ style="background-image:url('img/p1.jpg')" --></div>
-        <div class="card-body">
-          <p class="card-type">Community Management</p>
-          <h3>Page Instagram – Église</h3>
-          <p>Gestion et création de contenu : visuels, stories, publications régulières.</p>
-          <a href="#" class="card-link">Voir →</a>
-        </div>
-      </div>
-
-      <!-- ✏️ PROJET 2 -->
-      <div class="card">
-        <div class="card-img">IMAGE</div>
-        <div class="card-body">
-          <p class="card-type">Développement Web</p>
-          <h3>Site Web – Projet scolaire</h3>
-          <p>Conception et développement d'un site web dans le cadre d'un projet académique.</p>
-          <a href="#" class="card-link">Voir →</a>
-        </div>
-      </div>
-
-      <!-- ✏️ PROJET 3 -->
-      <div class="card">
-        <div class="card-img">IMAGE</div>
-        <div class="card-body">
-          <p class="card-type">Design</p>
-          <h3>Projet à venir</h3>
-          <p>Ajoute ici tes prochains projets : affiches, vidéos, designs Canva, etc.</p>
-          <a href="#" class="card-link">Voir →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <p class="section-label">Contact</p>
-    <p>Je suis disponible pour toutes infrmations supplémentaires, N'hésite pas à me contacter.</p>
-    <a href="mailto:joshua.lardy@gmail.com" class="contact-email">joshua.lardy@gmail.com</a>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/joshua-arzu-lardy-055207332" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/arzu.joshua/" target="_blank">Instagram</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Joshua ARZU LARDY — Tous droits réservés</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    </footer>
+  </body>
 </html>
