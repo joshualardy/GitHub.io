@@ -1,80 +1,64 @@
-// =====================
-// CURSEUR PERSONNALISÉ
-// =====================
 const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
-
-  // Léger délai pour l'anneau (effet traîne)
-  setTimeout(() => {
-    ring.style.left = e.clientX + 'px';
-    ring.style.top = e.clientY + 'px';
-  }, 60);
-});
-
-// Agrandir le curseur au survol des liens et boutons
-document.querySelectorAll('a, button').forEach((el) => {
-  el.addEventListener('mouseenter', () => {
-    ring.style.width = '56px';
-    ring.style.height = '56px';
-    ring.style.opacity = '0.8';
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
   });
-  el.addEventListener('mouseleave', () => {
-    ring.style.width = '36px';
-    ring.style.height = '36px';
-    ring.style.opacity = '0.5';
-  });
-});
 
-// =====================
-// NAVIGATION ACTIVE
-// =====================
-// Met en surbrillance le lien nav de la section visible
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
+  function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      navLinks.forEach((link) => {
-        link.style.color = '';
-        if (link.getAttribute('href') === '#' + entry.target.id) {
-          link.style.color = 'var(--accent)';
-        }
-      });
-    }
-  });
-}, { threshold: 0.4 });
-
-sections.forEach((section) => observer.observe(section));
-
-// =====================
-// PROJETS GITHUB
-// =====================
-
-fetch('https://api.github.com/users/joshualardy/repos?sort=updated&per_page=6')
-  .then(res => res.json())
-  .then(repos => {
-    const grid = document.querySelector('#projets .grid');
-    if (!grid) return;
-
-    repos.forEach(repo => {
-      grid.innerHTML += `
-        <div class="card">
-          <div class="card-body">
-            <p class="card-type">GitHub</p>
-            <h3>${repo.name}</h3>
-            <p>${repo.description || 'Aucune description.'}</p>
-            <a href="${repo.html_url}" class="card-link" target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub →
-            </a>
-          </div>
-        </div>`;
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.width = '16px';
+      cursor.style.height = '16px';
+      cursor.style.background = '#C44FD4';
+      ring.style.width = '52px';
+      ring.style.height = '52px';
+      ring.style.opacity = '0.3';
     });
-  })
-  .catch(err => {
-    console.error('Erreur lors du chargement des dépôts GitHub :', err);
+    el.addEventListener('mouseleave', () => {
+      cursor.style.width = '10px';
+      cursor.style.height = '10px';
+      cursor.style.background = '#D4541A';
+      ring.style.width = '36px';
+      ring.style.height = '36px';
+      ring.style.opacity = '0.5';
+    });
   });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Hero reveal immédiat
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 200 + i * 150);
+  });
+
+  // Rotation des domaines hero
+  const items = document.querySelectorAll('.hero-side-item');
+  let current = 0;
+  setInterval(() => {
+    items.forEach(i => i.classList.remove('active'));
+    current = (current + 1) % items.length;
+    items[current].classList.add('active');
+  }, 2000);
